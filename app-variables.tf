@@ -2,27 +2,25 @@
 ## Application - Variables ##
 #############################
 
-# company name 
 variable "company" {
   type        = string
-  description = "This variable defines the company name used to build resources"
+  description = "Company or organization prefix used in resource names"
 }
 
-# application name 
 variable "app_name" {
   type        = string
-  description = "This variable defines the application name used to build resources"
+  description = "Application name used in resource naming"
 }
 
-# domain name 
 variable "app_domain" {
   type        = string
-  description = "This variable defines the domain name used to build resources"
+  description = "Domain for VM hostname (can be fake for internal use)"
+  default     = "local"
 }
 
-# environment
 variable "environment" {
   type        = string
-  description = "This variable defines the environment to be built"
+  description = "Environment name (dev, test, prod, etc.)"
+  default     = "dev"
 }
 

@@ -2,26 +2,23 @@
 ## GCP Provider - Variables ##
 ##############################
 
-# GCP authentication file
 variable "gcp_auth_file" {
   type        = string
-  description = "GCP authentication file"
+  description = "Path to GCP service account JSON key file. Leave empty to use Application Default Credentials (ADC) or GOOGLE_APPLICATION_CREDENTIALS environment variable."
+  default     = ""
 }
 
-# define GCP project name
 variable "gcp_project" {
   type        = string
-  description = "GCP project name"
+  description = "GCP project ID (not name)"
 }
 
-# define GCP region
 variable "gcp_region" {
   type        = string
-  description = "GCP region"
+  description = "GCP region (e.g. europe-west4, us-central1)"
 }
 
-# define GCP region
 variable "gcp_zone" {
   type        = string
-  description = "GCP zone"
+  description = "GCP zone inside the region (e.g. europe-west4-b)"
 }

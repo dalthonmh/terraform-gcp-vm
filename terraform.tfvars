@@ -1,17 +1,27 @@
-# Application Definition 
-company     = "kopicloud"
-app_name    = "iac-ubuntu"
-app_domain  = "kopicloud.com"
-environment = "dev" # Dev, Test, Prod, etc
+# ============================================================
+# Application Definition
+# ============================================================
+company     = "mycompany"
+app_name    = "demo-vm"
+app_domain  = "example.com"
+environment = "dev"
 
-# GCP Settings
-gcp_project   = "kopicloud-medium"
-gcp_region    = "europe-west4"
-gcp_zone      = "europe-west4-b"
-gcp_auth_file = "../auth/kopicloud-medium.json"
+# ============================================================
+# GCP Settings (update with your values)
+# ============================================================
+gcp_project = "your-gcp-project-id"
+gcp_region  = "europe-west4"
+gcp_zone    = "europe-west4-b"
 
-# GCP Netwok
+# Path to key OR leave empty to use ADC (gcloud auth application-default login)
+gcp_auth_file = ""
+
+# ============================================================
+# Network
+# ============================================================
 network-subnet-cidr = "10.10.10.0/24"
 
+# ============================================================
 # Linux VM
-linux_instance_type = "f1-micro"
+# ============================================================
+linux_instance_type = "e2-micro"

@@ -1,0 +1,27 @@
+# ============================================================
+# Terraform GCP VM - Example variables file
+# Copy to terraform.tfvars and fill in your values
+# ============================================================
+
+# Application Definition
+company     = "mycompany"
+app_name    = "demo-vm"
+app_domain  = "example.com"
+environment = "dev"
+
+# GCP Settings
+gcp_project   = "my-gcp-project-123456"
+gcp_region    = "us-central1"
+gcp_zone      = "us-central1-a"
+
+# Path to your service account JSON key.
+# Leave empty ("") to use gcloud ADC instead (recommended for local development).
+gcp_auth_file = "../auth/my-gcp-project-123456.json"
+
+# Network
+network-subnet-cidr = "10.10.10.0/24"
+
+# VM Machine Type
+# e2-micro  → cheap, free-tier eligible in many regions
+# e2-small, e2-medium, n2-standard-2 etc for more power
+linux_instance_type = "e2-micro"
