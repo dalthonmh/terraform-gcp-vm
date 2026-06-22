@@ -1,15 +1,20 @@
-#####################
-## Debian Versions ##
-#####################
+####################################
+## Debian Image (latest in family) ##
+####################################
 
-variable "debian_13_sku" {
-  type        = string
-  description = "Debian 13 (Trixie) - Recommended"
-  default     = "debian-cloud/debian-13"
+# This fetches the latest Debian 13 image automatically.
+# Much more reliable than hardcoding a family string.
+data "google_compute_image" "debian_13" {
+  family  = "debian-13"
+  project = "debian-cloud"
+
+  # Ensure the Compute API is enabled before trying to read images
+  depends_on = [google_project_service.required["compute.googleapis.com"]]
 }
 
-variable "debian_12_sku" {
+# Kept for backwards compatibility / override if someone really wants a custom image
+variable "debian_13_sku" {
   type        = string
-  description = "Debian 12 (Bookworm)"
-  default     = "debian-cloud/debian-12"
+  description = "(Optional) Override with a specific image self_link or family reference. Leave empty to use latest debian-13."
+  default     = ""
 }

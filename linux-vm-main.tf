@@ -19,6 +19,8 @@ resource "google_compute_instance" "vm_instance_public" {
   hostname     = "${var.app_name}-vm${random_id.instance_id.hex}.${var.app_domain}"
   tags         = ["ssh", "http"]
 
+  depends_on = [google_project_service.required["compute.googleapis.com"]]
+
   labels = {
     environment = var.environment
     app         = var.app_name
@@ -27,7 +29,8 @@ resource "google_compute_instance" "vm_instance_public" {
 
   boot_disk {
     initialize_params {
-      image = var.debian_13_sku
+      # Use explicit image if provided, otherwise the latest from the data source
+      image = var.debian_13_sku != "" ? var.debian_13_sku : data.google_compute_image.debian_13.self_link
     }
   }
 

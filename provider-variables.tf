@@ -10,7 +10,7 @@ variable "gcp_auth_file" {
 
 variable "gcp_project" {
   type        = string
-  description = "GCP project ID (not name)"
+  description = "GCP project ID (NOT the numeric project number, NOT the display name). Example: my-project-123456"
 }
 
 variable "gcp_region" {

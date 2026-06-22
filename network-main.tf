@@ -13,6 +13,8 @@ resource "google_compute_network" "vpc" {
   description             = "Custom VPC for ${var.app_name} ${var.environment}"
   auto_create_subnetworks = false
   routing_mode            = "GLOBAL"
+
+  depends_on = [google_project_service.required["compute.googleapis.com"]]
 }
 
 # Public subnet (single region for demo)

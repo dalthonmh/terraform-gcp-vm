@@ -10,6 +10,7 @@ app_domain  = "example.com"
 environment = "dev"
 
 # GCP Settings
+# IMPORTANT: Use the Project ID (string), NOT the numeric project number
 gcp_project   = "my-gcp-project-123456"
 gcp_region    = "us-central1"
 gcp_zone      = "us-central1-a"

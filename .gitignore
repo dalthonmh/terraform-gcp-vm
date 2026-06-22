@@ -32,4 +32,5 @@ override.tf.json
 terraform.tfvars
 *.auto.tfvars
 !terraform.tfvars.example
+notas.txt
 
