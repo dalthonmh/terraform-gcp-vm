@@ -33,4 +33,4 @@ terraform.tfvars
 *.auto.tfvars
 !terraform.tfvars.example
 notas.txt
-
+CLAUDE.md
